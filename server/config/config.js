@@ -8,8 +8,6 @@ module.exports = {
     dialect: "postgres",
     email: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,
-    emailPort: process.env.MAIL_PORT,
-    emailHost: process.env.MAIL_HOST,
   },
   test: {
     username: process.env.DB_USERNAME,
@@ -19,8 +17,6 @@ module.exports = {
     dialect: "postgres",
     email: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,
-    emailPort: process.env.MAIL_PORT,
-    emailHost: process.env.MAIL_HOST,
   },
   production: {
     username: process.env.DB_USERNAME,
@@ -30,7 +26,5 @@ module.exports = {
     dialect: "postgres",
     email: process.env.EMAIL_USER,
     emailPassword: process.env.EMAIL_PASSWORD,
-    emailPort: process.env.MAIL_PORT,
-    emailHost: process.env.MAIL_HOST,
   },
 };

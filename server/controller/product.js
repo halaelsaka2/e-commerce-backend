@@ -13,9 +13,10 @@ async function addProduct(req, res) {
 }
 
 async function getAllProducts(req, res) {
+  const subId = req.query.subId;
   const { limit, offset } = paginationCalculations(req);
   product
-    .getAllProducts(limit, offset)
+    .getAllProducts(limit, offset, subId)
     .then((result) => {
       return res.send(result);
     })

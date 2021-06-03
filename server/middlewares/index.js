@@ -46,7 +46,7 @@ function paginationCalculations(req) {
   const limit = 10;
   const page = req.params.page;
   const offset = limit * (page - 1);
-  return { limit, page, offset };
+  return { limit, offset };
 }
 module.exports = {
   ensureAuthenticated,

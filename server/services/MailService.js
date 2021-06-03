@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: "../server/config/.env" });
 const sendMailer = require("../config/mailerConfig");
 class MailService {
   static async sendEmail(email, message) {

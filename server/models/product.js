@@ -56,8 +56,13 @@ module.exports = (sequelize, DataTypes) => {
   product.getProductsBySubId = async (id) => {
     return await product.findAll({ where: { subCategoryId: id }, include: [{ all: true, nested: true }] });
   };
-  product.getAllProducts = async (limit, offset) => {
-    return await product.findAndCountAll({ include: [{ all: true }], limit, offset });
+  product.getAllProducts = async (limit, offset, subCategoryId) => {
+    return await product.findAndCountAll({
+      where: subCategoryId !== "undefined" ? { subCategoryId } : {},
+      include: [{ all: true }],
+      limit,
+      offset,
+    });
   };
   product.deleteProduct = async (id) => {
     return new Promise((resolve, reject) => {

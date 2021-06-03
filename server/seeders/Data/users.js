@@ -5,7 +5,7 @@ const UsersData = [
   {
     userName: "admin",
     password: hashed_password,
-    email: "halaelsaka@gmail.com",
+    email: "admin@gmail.com",
     isActive: true,
     roleId: 1,
     createdAt: new Date(),

@@ -15,6 +15,11 @@ function ensureAuthenticated(req, res, next) {
   }
 }
 
+function checkAuthorization(req, res, next) {
+  if (req.user.data.roleId !== 1) res.sendStatus(403);
+  else next();
+}
+
 async function checkIfCategoryHaveSub(req, res, next) {
   const categories = await subCategory.getSubByCategoryId(req.params.id);
   if (categories.length > 0) {
@@ -54,4 +59,5 @@ module.exports = {
   checkIfUserHaveRole,
   checkIfProductInSubCat,
   paginationCalculations,
+  checkAuthorization,
 };
